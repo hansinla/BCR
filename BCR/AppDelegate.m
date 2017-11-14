@@ -12,10 +12,8 @@
 const int RND2POINTS = 100;
 const int RND3POINTS = 500;
 
-// globals for team scores
-int scoreTeam1 = 0;
-int scoreTeam2 = 0;
-int scoreTeam3 = 0;
+// sarray for team scores
+int teamScore[3] = {0, 0, 0};
 
 @interface AppDelegate ()
 
@@ -50,7 +48,6 @@ int scoreTeam3 = 0;
 // reset all
 - (IBAction)resetAll:(id)sender;
 
-
 @end
 
 @implementation AppDelegate
@@ -59,134 +56,109 @@ int scoreTeam3 = 0;
     // Insert code here to initialize your application
 }
 
-
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
     // Insert code here to tear down your application
 }
 
-// scores Team 1
+// scores Team 1 **************************************************
 - (IBAction)decTeam1Rnd2:(id)sender {
-    scoreTeam1 -= RND2POINTS;
-    if (scoreTeam1 < 0 ){
-        scoreTeam1 = 0;
-    }
-    NSString* outputString = [[NSString alloc] initWithFormat:@"%i", scoreTeam1];
-    [_scoreOne setStringValue: outputString];
+    [self setScore: -RND2POINTS forTeam: 1];
 }
 
-
 - (IBAction)incTeam1Rnd2:(id)sender {
-    scoreTeam1 += RND2POINTS;
-    NSString* outputString = [[NSString alloc] initWithFormat:@"%i", scoreTeam1];
-    [_scoreOne setStringValue: outputString];
+    [self setScore: RND2POINTS forTeam: 1];
 }
 
 - (IBAction)decTeam1Rnd3:(id)sender {
-    scoreTeam1 -= RND3POINTS;
-    if (scoreTeam1 < 0 ){
-        scoreTeam1 = 0;
-    }
-    NSString* outputString = [[NSString alloc] initWithFormat:@"%i", scoreTeam1];
-    [_scoreOne setStringValue: outputString];
+    [self setScore: -RND3POINTS forTeam: 1];
 }
 
 - (IBAction)incTeam1Rnd3:(id)sender {
-    scoreTeam1 += RND3POINTS;
-    NSString* outputString = [[NSString alloc] initWithFormat:@"%i", scoreTeam1];
-    [_scoreOne setStringValue: outputString];
+    [self setScore: RND3POINTS forTeam: 1];
 }
 
 - (IBAction)resetTeam1:(id)sender {
-    scoreTeam1 = 0;
-    NSString* outputString = [[NSString alloc] initWithFormat:@"%i", scoreTeam1];
-    [_scoreOne setStringValue: outputString];
+    [self resetScoreForTeam: 1];
 }
 
-// scores Team 2
+// scores Team 2 **************************************************
 - (IBAction)decTeam2Rnd2:(id)sender {
-    scoreTeam2 -= RND2POINTS;
-    if (scoreTeam2 < 0 ){
-        scoreTeam2 = 0;
-    }
-    NSString* outputString = [[NSString alloc] initWithFormat:@"%i", scoreTeam2];
-    [_scoreTwo setStringValue: outputString];
+    [self setScore: -RND2POINTS forTeam: 2];
 }
 
 - (IBAction)incTeam2Rnd2:(id)sender {
-    scoreTeam2 += RND2POINTS;
-    NSString* outputString = [[NSString alloc] initWithFormat:@"%i", scoreTeam2];
-    [_scoreTwo setStringValue: outputString];
+    [self setScore: RND2POINTS forTeam: 2];
 }
 
 - (IBAction)decTeam2Rnd3:(id)sender {
-    scoreTeam2 -= RND3POINTS;
-    if (scoreTeam2 < 0 ){
-        scoreTeam2 = 0;
-    }
-    NSString* outputString = [[NSString alloc] initWithFormat:@"%i", scoreTeam2];
-    [_scoreTwo setStringValue: outputString];
+    [self setScore: -RND3POINTS forTeam: 2];
 }
 
 - (IBAction)incTeam2Rnd3:(id)sender {
-    scoreTeam2 += RND3POINTS;
-    NSString* outputString = [[NSString alloc] initWithFormat:@"%i", scoreTeam2];
-    [_scoreTwo setStringValue: outputString];
+    [self setScore: RND3POINTS forTeam: 2];
 }
 
 - (IBAction)resetTeam2:(id)sender {
-    scoreTeam2 = 0;
-    NSString* outputString = [[NSString alloc] initWithFormat:@"%i", scoreTeam2];
-    [_scoreTwo setStringValue: outputString];
+    [self resetScoreForTeam: 2];
 }
 
-// scores Team 2
-
+// scores Team 3 **************************************************
 - (IBAction)decTeam3Rnd2:(id)sender {
-    scoreTeam3 -= RND2POINTS;
-    if (scoreTeam3 < 0 ){
-        scoreTeam3 = 0;
-    }
-    NSString* outputString = [[NSString alloc] initWithFormat:@"%i", scoreTeam3];
-    [_scoreThree setStringValue: outputString];
+    [self setScore: -RND2POINTS forTeam: 3];
 }
 
 - (IBAction)incTeam3Rnd2:(id)sender {
-    scoreTeam3 += RND2POINTS;
-    NSString* outputString = [[NSString alloc] initWithFormat:@"%i", scoreTeam3];
-    [_scoreThree setStringValue: outputString];
+    [self setScore: RND2POINTS forTeam: 3];
 }
 
 - (IBAction)decTeam3Rnd3:(id)sender {
-    scoreTeam3 -= RND3POINTS;
-    if (scoreTeam3 < 0 ){
-        scoreTeam3 = 0;
-    }
-    NSString* outputString = [[NSString alloc] initWithFormat:@"%i", scoreTeam3];
-    [_scoreThree setStringValue: outputString];
+    [self setScore: -RND3POINTS forTeam: 3];
 }
 
 - (IBAction)incTeam3Rnd3:(id)sender {
-    scoreTeam3 += RND3POINTS;
-    NSString* outputString = [[NSString alloc] initWithFormat:@"%i", scoreTeam3];
-    [_scoreThree setStringValue: outputString];
+   [self setScore: RND3POINTS forTeam: 3];
 }
 
 - (IBAction)resetTeam3:(id)sender {
-    scoreTeam3 = 0;
-    NSString* outputString = [[NSString alloc] initWithFormat:@"%i", scoreTeam3];
-    [_scoreThree setStringValue: outputString];
+    [self resetScoreForTeam: 3];
 }
+
 - (IBAction)resetAll:(id)sender {
-    scoreTeam1 = 0;
-    scoreTeam2 = 0;
-    scoreTeam3 = 0;
-    NSString* outputString = [[NSString alloc] initWithFormat:@"%i", 0];
-    [_scoreOne setStringValue: outputString];
-    [_scoreTwo setStringValue: outputString];
-    [_scoreThree setStringValue: outputString];
+    [self resetScoreForTeam: 1];
+    [self resetScoreForTeam: 2];
+    [self resetScoreForTeam: 3];
 }
 
+// Methods
+-(void) setScore: (int) score forTeam: (int) team {
+    teamScore[team - 1] += score;
+    if (teamScore[team - 1] < 0) teamScore[team - 1] = 0;
+    [self updateDisplayForTeam: team];
+}
 
+-(void) resetScoreForTeam: (int) team{
+    teamScore[team - 1] = 0;
+    [self updateDisplayForTeam: team];
+}
+
+-(void) updateDisplayForTeam: (int) team{
+    
+    NSString* outputString = [[NSString alloc] initWithFormat:@"%i", teamScore[team - 1]];
+    
+    switch (team) {
+        case 1:
+            [_scoreOne setStringValue: outputString];
+            break;
+        case 2:
+            [_scoreTwo setStringValue: outputString];
+            break;
+        case 3:
+            [_scoreThree setStringValue: outputString];
+            break;
+        default:
+            break;
+    }
+}
 
 
 @end

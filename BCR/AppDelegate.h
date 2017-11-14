@@ -10,5 +10,9 @@
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
+-(void) setScore: (int) score forTeam: (int) team;
+-(void) resetScoreForTeam: (int) team;
+-(void) updateDisplayForTeam: (int) team;
+
 @end
 
