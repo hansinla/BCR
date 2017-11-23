@@ -51,7 +51,6 @@
 
 -(IBAction)moveLeft:(id)sender
 {
-    
     if ([_wrongSoundPlay isPlaying]) {
         [_wrongSoundPlay stop];
         [_wrongSoundPlay setCurrentTime:0];
@@ -62,13 +61,12 @@
 
 -(IBAction)moveRight:(id)sender
 {
-    NSLog(@"Right arrow pressed");
     if ([_correctSoundPlay isPlaying]) {
         [_correctSoundPlay stop];
-        [_correctSoundPlay  setCurrentTime:0];
+        [_correctSoundPlay setCurrentTime:0];
     }
     [_correctSoundPlay play];
-    
+    NSLog(@"Right arrow pressed");
 }
 @end
 
