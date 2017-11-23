@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 
 // define constants for the round 2 and round 3 score values
+const int RND1POINTS = 50;
 const int RND2POINTS = 100;
 const int RND3POINTS = 500;
 
@@ -29,7 +30,9 @@ int teamScore[3] = {0, 0, 0};
 - (IBAction)incTeam1Rnd2:(id)sender;
 - (IBAction)decTeam1Rnd3:(id)sender;
 - (IBAction)incTeam1Rnd3:(id)sender;
+- (IBAction)decTeam1Rnd1:(id)sender;
 - (IBAction)resetTeam1:(id)sender;
+- (IBAction)incTeam1Rnd1:(id)sender;
 
 // action for decrement and increment of team 2 scores
 - (IBAction)decTeam2Rnd2:(id)sender;
@@ -37,6 +40,8 @@ int teamScore[3] = {0, 0, 0};
 - (IBAction)decTeam2Rnd3:(id)sender;
 - (IBAction)incTeam2Rnd3:(id)sender;
 - (IBAction)resetTeam2:(id)sender;
+- (IBAction)decTeam2Rnd1:(id)sender;
+- (IBAction)incTeam2Rnd1:(id)sender;
 
 // action for decrement and increment of team 3 scores
 - (IBAction)decTeam3Rnd2:(id)sender;
@@ -44,6 +49,8 @@ int teamScore[3] = {0, 0, 0};
 - (IBAction)decTeam3Rnd3:(id)sender;
 - (IBAction)incTeam3Rnd3:(id)sender;
 - (IBAction)resetTeam3:(id)sender;
+- (IBAction)decTeam3Rnd1:(id)sender;
+- (IBAction)incTeam3Rnd1:(id)sender;
 
 // reset all
 - (IBAction)resetAll:(id)sender;
@@ -77,8 +84,16 @@ int teamScore[3] = {0, 0, 0};
     [self setScore: RND3POINTS forTeam: 1];
 }
 
+- (IBAction)decTeam1Rnd1:(id)sender {
+    [self setScore: -RND1POINTS forTeam: 1];
+}
+
 - (IBAction)resetTeam1:(id)sender {
     [self resetScoreForTeam: 1];
+}
+
+- (IBAction)incTeam1Rnd1:(id)sender {
+    [self setScore: RND1POINTS forTeam: 1];
 }
 
 // scores Team 2 **************************************************
@@ -102,6 +117,14 @@ int teamScore[3] = {0, 0, 0};
     [self resetScoreForTeam: 2];
 }
 
+- (IBAction)decTeam2Rnd1:(id)sender {
+    [self setScore: -RND1POINTS forTeam: 2];
+}
+
+- (IBAction)incTeam2Rnd1:(id)sender {
+    [self setScore: RND1POINTS forTeam: 2];
+}
+
 // scores Team 3 **************************************************
 - (IBAction)decTeam3Rnd2:(id)sender {
     [self setScore: -RND2POINTS forTeam: 3];
@@ -121,6 +144,14 @@ int teamScore[3] = {0, 0, 0};
 
 - (IBAction)resetTeam3:(id)sender {
     [self resetScoreForTeam: 3];
+}
+
+- (IBAction)decTeam3Rnd1:(id)sender {
+    [self setScore: -RND1POINTS forTeam: 3];
+}
+
+- (IBAction)incTeam3Rnd1:(id)sender {
+    [self setScore: RND1POINTS forTeam: 3];
 }
 
 - (IBAction)resetAll:(id)sender {

@@ -15,6 +15,7 @@
 		3A8D8ED61FB63B7A00E9BCCF /* green_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A8D8ED41FB63B7A00E9BCCF /* green_button.png */; };
 		3A8D8ED91FB63DA900E9BCCF /* CORRECT.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3A8D8ED71FB63DA900E9BCCF /* CORRECT.wav */; };
 		3A8D8EDA1FB63DA900E9BCCF /* WRONG.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3A8D8ED81FB63DA900E9BCCF /* WRONG.wav */; };
+		3AB42FF81FBFD13E0089718D /* BCRView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB42FF71FBFD13E0089718D /* BCRView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,8 @@
 		3A8D8ED41FB63B7A00E9BCCF /* green_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green_button.png; sourceTree = "<group>"; };
 		3A8D8ED71FB63DA900E9BCCF /* CORRECT.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = CORRECT.wav; sourceTree = "<group>"; };
 		3A8D8ED81FB63DA900E9BCCF /* WRONG.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = WRONG.wav; sourceTree = "<group>"; };
+		3AB42FF61FBFD13E0089718D /* BCRView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BCRView.h; sourceTree = "<group>"; };
+		3AB42FF71FBFD13E0089718D /* BCRView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BCRView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +67,8 @@
 			children = (
 				3A09E9451FB569C700C09EC9 /* AppDelegate.h */,
 				3A09E9461FB569C700C09EC9 /* AppDelegate.m */,
+				3AB42FF61FBFD13E0089718D /* BCRView.h */,
+				3AB42FF71FBFD13E0089718D /* BCRView.m */,
 				3A09E9481FB569C700C09EC9 /* Assets.xcassets */,
 				3A09E94A1FB569C700C09EC9 /* MainMenu.xib */,
 				3A09E94D1FB569C700C09EC9 /* Info.plist */,
@@ -153,6 +158,7 @@
 			files = (
 				3A09E94F1FB569C700C09EC9 /* main.m in Sources */,
 				3A09E9471FB569C700C09EC9 /* AppDelegate.m in Sources */,
+				3AB42FF81FBFD13E0089718D /* BCRView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
