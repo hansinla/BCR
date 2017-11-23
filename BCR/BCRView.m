@@ -41,25 +41,34 @@
 
 -(IBAction)moveUp:(id)sender
 {
-    [[self window] invalidateCursorRectsForView:self];
+    // some code
 }
 
 -(IBAction)moveDown:(id)sender
 {
-    [[self window] invalidateCursorRectsForView:self];
+    // some code
 }
 
 -(IBAction)moveLeft:(id)sender
 {
-    NSLog(@"Left arrow pressed");
+    
+    if ([_wrongSoundPlay isPlaying]) {
+        [_wrongSoundPlay stop];
+        [_wrongSoundPlay setCurrentTime:0];
+    }
     [_wrongSoundPlay play];
-    [[self window] invalidateCursorRectsForView:self];
+    NSLog(@"Left arrow pressed");
 }
 
 -(IBAction)moveRight:(id)sender
 {
     NSLog(@"Right arrow pressed");
+    if ([_correctSoundPlay isPlaying]) {
+        [_correctSoundPlay stop];
+        [_correctSoundPlay  setCurrentTime:0];
+    }
     [_correctSoundPlay play];
-    [[self window] invalidateCursorRectsForView:self];
+    
 }
 @end
+
