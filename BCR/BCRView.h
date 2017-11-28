@@ -9,9 +9,10 @@
 #import <Cocoa/Cocoa.h>
 #import <AVFoundation/AVFoundation.h>
 
-@interface BCRView : NSView
+extern NSString * const correctSoundFileName;
+extern NSString * const wrongSoundFileName;
 
-{
+@interface BCRView : NSView {
     AVAudioPlayer *_wrongSoundPlay;
     AVAudioPlayer *_correctSoundPlay;
 }

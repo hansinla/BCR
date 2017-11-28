@@ -13,8 +13,7 @@ const int RND1POINTS = 50;
 const int RND2POINTS = 100;
 const int RND3POINTS = 500;
 
-// sarray for team scores
-int teamScore[3] = {0, 0, 0};
+
 
 @interface AppDelegate ()
 
@@ -25,32 +24,32 @@ int teamScore[3] = {0, 0, 0};
 @property (weak) IBOutlet NSTextField *scoreTwo;
 @property (weak) IBOutlet NSTextField *scoreThree;
 
+// score button outlets
+@property (weak) IBOutlet NSButton *team1Dec;
+@property (weak) IBOutlet NSButton *team1Inc;
+@property (weak) IBOutlet NSButton *team2Dec;
+@property (weak) IBOutlet NSButton *team2Inc;
+@property (weak) IBOutlet NSButton *team3Dec;
+@property (weak) IBOutlet NSButton *team3Inc;
+
+// action for radio buttons
+- (IBAction)setRound:(id)sender;
+
+
 // action for decrement and increment of team 1 scores
-- (IBAction)decTeam1Rnd2:(id)sender;
-- (IBAction)incTeam1Rnd2:(id)sender;
-- (IBAction)decTeam1Rnd3:(id)sender;
-- (IBAction)incTeam1Rnd3:(id)sender;
 - (IBAction)decTeam1Rnd1:(id)sender;
-- (IBAction)resetTeam1:(id)sender;
 - (IBAction)incTeam1Rnd1:(id)sender;
+- (IBAction)resetTeam1:(id)sender;
 
 // action for decrement and increment of team 2 scores
-- (IBAction)decTeam2Rnd2:(id)sender;
-- (IBAction)incTeam2Rnd2:(id)sender;
-- (IBAction)decTeam2Rnd3:(id)sender;
-- (IBAction)incTeam2Rnd3:(id)sender;
-- (IBAction)resetTeam2:(id)sender;
 - (IBAction)decTeam2Rnd1:(id)sender;
 - (IBAction)incTeam2Rnd1:(id)sender;
+- (IBAction)resetTeam2:(id)sender;
 
 // action for decrement and increment of team 3 scores
-- (IBAction)decTeam3Rnd2:(id)sender;
-- (IBAction)incTeam3Rnd2:(id)sender;
-- (IBAction)decTeam3Rnd3:(id)sender;
-- (IBAction)incTeam3Rnd3:(id)sender;
-- (IBAction)resetTeam3:(id)sender;
 - (IBAction)decTeam3Rnd1:(id)sender;
 - (IBAction)incTeam3Rnd1:(id)sender;
+- (IBAction)resetTeam3:(id)sender;
 
 // reset all
 - (IBAction)resetAll:(id)sender;
@@ -58,6 +57,12 @@ int teamScore[3] = {0, 0, 0};
 @end
 
 @implementation AppDelegate
+
+// sarray for team scores
+int teamScore[3] = {0, 0, 0};
+
+// point per round, on start up round 1
+int roundScoreValue = RND1POINTS;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     // Insert code here to initialize your application
@@ -68,92 +73,45 @@ int teamScore[3] = {0, 0, 0};
 }
 
 // scores Team 1 **************************************************
-- (IBAction)decTeam1Rnd2:(id)sender {
-    [self setScore: -RND2POINTS forTeam: 1];
-}
-
-- (IBAction)incTeam1Rnd2:(id)sender {
-    [self setScore: RND2POINTS forTeam: 1];
-}
-
-- (IBAction)decTeam1Rnd3:(id)sender {
-    [self setScore: -RND3POINTS forTeam: 1];
-}
-
-- (IBAction)incTeam1Rnd3:(id)sender {
-    [self setScore: RND3POINTS forTeam: 1];
-}
-
 - (IBAction)decTeam1Rnd1:(id)sender {
-    [self setScore: -RND1POINTS forTeam: 1];
+    [self setScore: -roundScoreValue forTeam: 1];
+}
+
+- (IBAction)incTeam1Rnd1:(id)sender {
+    [self setScore: roundScoreValue forTeam: 1];
 }
 
 - (IBAction)resetTeam1:(id)sender {
     [self resetScoreForTeam: 1];
 }
 
-- (IBAction)incTeam1Rnd1:(id)sender {
-    [self setScore: RND1POINTS forTeam: 1];
-}
-
 // scores Team 2 **************************************************
-- (IBAction)decTeam2Rnd2:(id)sender {
-    [self setScore: -RND2POINTS forTeam: 2];
+- (IBAction)decTeam2Rnd1:(id)sender {
+    [self setScore: -roundScoreValue forTeam: 2];
 }
 
-- (IBAction)incTeam2Rnd2:(id)sender {
-    [self setScore: RND2POINTS forTeam: 2];
-}
-
-- (IBAction)decTeam2Rnd3:(id)sender {
-    [self setScore: -RND3POINTS forTeam: 2];
-}
-
-- (IBAction)incTeam2Rnd3:(id)sender {
-    [self setScore: RND3POINTS forTeam: 2];
+- (IBAction)incTeam2Rnd1:(id)sender {
+    [self setScore: roundScoreValue forTeam: 2];
 }
 
 - (IBAction)resetTeam2:(id)sender {
     [self resetScoreForTeam: 2];
 }
 
-- (IBAction)decTeam2Rnd1:(id)sender {
-    [self setScore: -RND1POINTS forTeam: 2];
-}
-
-- (IBAction)incTeam2Rnd1:(id)sender {
-    [self setScore: RND1POINTS forTeam: 2];
-}
-
 // scores Team 3 **************************************************
-- (IBAction)decTeam3Rnd2:(id)sender {
-    [self setScore: -RND2POINTS forTeam: 3];
+- (IBAction)decTeam3Rnd1:(id)sender {
+    [self setScore: -roundScoreValue forTeam: 3];
 }
 
-- (IBAction)incTeam3Rnd2:(id)sender {
-    [self setScore: RND2POINTS forTeam: 3];
-}
-
-- (IBAction)decTeam3Rnd3:(id)sender {
-    [self setScore: -RND3POINTS forTeam: 3];
-}
-
-- (IBAction)incTeam3Rnd3:(id)sender {
-   [self setScore: RND3POINTS forTeam: 3];
+- (IBAction)incTeam3Rnd1:(id)sender {
+    [self setScore: roundScoreValue forTeam: 3];
 }
 
 - (IBAction)resetTeam3:(id)sender {
     [self resetScoreForTeam: 3];
 }
 
-- (IBAction)decTeam3Rnd1:(id)sender {
-    [self setScore: -RND1POINTS forTeam: 3];
-}
-
-- (IBAction)incTeam3Rnd1:(id)sender {
-    [self setScore: RND1POINTS forTeam: 3];
-}
-
+// reset all score **************************************************
 - (IBAction)resetAll:(id)sender {
     [self resetScoreForTeam: 1];
     [self resetScoreForTeam: 2];
@@ -191,6 +149,31 @@ int teamScore[3] = {0, 0, 0};
     }
 }
 
+-(void) updateScoreDisplays: (NSString*) score{
+    [_team1Dec setTitle: score];
+    [_team1Inc setTitle: score];
+    [_team2Dec setTitle: score];
+    [_team2Inc setTitle: score];
+    [_team3Dec setTitle: score];
+    [_team3Inc setTitle: score];
+}
+
+- (IBAction)setRound:(id)sender {
+   // NSLog(@"%@", [sender title]);
+    if ([[sender title] isEqualToString:@"Round 1"]){
+        NSLog(@"Switching to: %@", [sender title]);
+        roundScoreValue = RND1POINTS;
+        [self updateScoreDisplays: [NSString stringWithFormat:@"%d",roundScoreValue]];
+    } else if ([[sender title] isEqualToString:@"Round 2"]){
+        NSLog(@"Switching to: %@", [sender title]);
+        roundScoreValue = RND2POINTS;
+        [self updateScoreDisplays: [NSString stringWithFormat:@"%d",roundScoreValue]];
+    } else if ([[sender title] isEqualToString:@"Round 3"]){
+        NSLog(@"Switching to: %@", [sender title]);
+        roundScoreValue = RND3POINTS;
+        [self updateScoreDisplays: [NSString stringWithFormat:@"%d",roundScoreValue]];
+    }
+}
 
 @end
 

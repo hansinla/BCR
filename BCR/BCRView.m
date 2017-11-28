@@ -8,6 +8,8 @@
 
 #import "BCRView.h"
 
+NSString * const correctSoundFileName = @"%@/CORRECT.wav";
+NSString * const wrongSoundFileName = @"%@/WRONG.wav";
 
 @implementation BCRView
 
@@ -15,10 +17,10 @@
     [super awakeFromNib];
     
     // Construct URL to sound file
-    NSString *path1 = [NSString stringWithFormat:@"%@/CORRECT.wav", [[NSBundle mainBundle] resourcePath]];
+    NSString *path1 = [NSString stringWithFormat: correctSoundFileName, [[NSBundle mainBundle] resourcePath]];
     NSURL *correctSoundUrl = [NSURL fileURLWithPath:path1];
     
-    NSString *path2 = [NSString stringWithFormat:@"%@/WRONG.wav", [[NSBundle mainBundle] resourcePath]];
+    NSString *path2 = [NSString stringWithFormat: wrongSoundFileName, [[NSBundle mainBundle] resourcePath]];
     NSURL *wrongSoundUrl = [NSURL fileURLWithPath:path2];
     
     // Create audio player object and initialize with URL to sound
