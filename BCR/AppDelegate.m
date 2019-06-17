@@ -122,11 +122,13 @@ int roundScoreValue = RND1POINTS;
 -(void) setScore: (int) score forTeam: (int) team {
     teamScore[team - 1] += score;
     if (teamScore[team - 1] < 0) teamScore[team - 1] = 0;
+    NSLog(@"Setting score for team: %d changing by: %d. Score is now: %d", team, score, teamScore[team - 1]);
     [self updateDisplayForTeam: team];
 }
 
 -(void) resetScoreForTeam: (int) team{
     teamScore[team - 1] = 0;
+    NSLog(@"Resetting score for team: %d. Score is now: %d", team, teamScore[team - 1]);
     [self updateDisplayForTeam: team];
 }
 

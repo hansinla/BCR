@@ -11,10 +11,10 @@
 		3A09E9491FB569C700C09EC9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A09E9481FB569C700C09EC9 /* Assets.xcassets */; };
 		3A09E94C1FB569C700C09EC9 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A09E94A1FB569C700C09EC9 /* MainMenu.xib */; };
 		3A09E94F1FB569C700C09EC9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A09E94E1FB569C700C09EC9 /* main.m */; };
+		3A30FE661FDF1FA00023E18F /* WRONG.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3A30FE651FDF1FA00023E18F /* WRONG.wav */; };
+		3A30FE681FDF1FA40023E18F /* CORRECT.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3A30FE671FDF1FA40023E18F /* CORRECT.wav */; };
 		3A8D8ED51FB63B7A00E9BCCF /* red_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A8D8ED31FB63B7A00E9BCCF /* red_button.png */; };
 		3A8D8ED61FB63B7A00E9BCCF /* green_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A8D8ED41FB63B7A00E9BCCF /* green_button.png */; };
-		3A8D8ED91FB63DA900E9BCCF /* CORRECT.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3A8D8ED71FB63DA900E9BCCF /* CORRECT.wav */; };
-		3A8D8EDA1FB63DA900E9BCCF /* WRONG.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3A8D8ED81FB63DA900E9BCCF /* WRONG.wav */; };
 		3AB42FF81FBFD13E0089718D /* BCRView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB42FF71FBFD13E0089718D /* BCRView.m */; };
 /* End PBXBuildFile section */
 
@@ -27,10 +27,10 @@
 		3A09E94D1FB569C700C09EC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A09E94E1FB569C700C09EC9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3A09E9501FB569C700C09EC9 /* BCR.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BCR.entitlements; sourceTree = "<group>"; };
+		3A30FE651FDF1FA00023E18F /* WRONG.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = WRONG.wav; sourceTree = "<group>"; };
+		3A30FE671FDF1FA40023E18F /* CORRECT.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = CORRECT.wav; sourceTree = "<group>"; };
 		3A8D8ED31FB63B7A00E9BCCF /* red_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red_button.png; sourceTree = "<group>"; };
 		3A8D8ED41FB63B7A00E9BCCF /* green_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green_button.png; sourceTree = "<group>"; };
-		3A8D8ED71FB63DA900E9BCCF /* CORRECT.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = CORRECT.wav; sourceTree = "<group>"; };
-		3A8D8ED81FB63DA900E9BCCF /* WRONG.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = WRONG.wav; sourceTree = "<group>"; };
 		3AB42FF61FBFD13E0089718D /* BCRView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BCRView.h; sourceTree = "<group>"; };
 		3AB42FF71FBFD13E0089718D /* BCRView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BCRView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -65,6 +65,8 @@
 		3A09E9441FB569C700C09EC9 /* BCR */ = {
 			isa = PBXGroup;
 			children = (
+				3A30FE671FDF1FA40023E18F /* CORRECT.wav */,
+				3A30FE651FDF1FA00023E18F /* WRONG.wav */,
 				3A09E9451FB569C700C09EC9 /* AppDelegate.h */,
 				3A09E9461FB569C700C09EC9 /* AppDelegate.m */,
 				3AB42FF61FBFD13E0089718D /* BCRView.h */,
@@ -76,8 +78,6 @@
 				3A09E9501FB569C700C09EC9 /* BCR.entitlements */,
 				3A8D8ED41FB63B7A00E9BCCF /* green_button.png */,
 				3A8D8ED31FB63B7A00E9BCCF /* red_button.png */,
-				3A8D8ED71FB63DA900E9BCCF /* CORRECT.wav */,
-				3A8D8ED81FB63DA900E9BCCF /* WRONG.wav */,
 			);
 			path = BCR;
 			sourceTree = "<group>";
@@ -140,12 +140,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A8D8EDA1FB63DA900E9BCCF /* WRONG.wav in Resources */,
-				3A8D8ED91FB63DA900E9BCCF /* CORRECT.wav in Resources */,
 				3A09E9491FB569C700C09EC9 /* Assets.xcassets in Resources */,
 				3A09E94C1FB569C700C09EC9 /* MainMenu.xib in Resources */,
 				3A8D8ED51FB63B7A00E9BCCF /* red_button.png in Resources */,
+				3A30FE661FDF1FA00023E18F /* WRONG.wav in Resources */,
 				3A8D8ED61FB63B7A00E9BCCF /* green_button.png in Resources */,
+				3A30FE681FDF1FA40023E18F /* CORRECT.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
